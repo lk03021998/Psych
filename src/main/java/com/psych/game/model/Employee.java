@@ -14,14 +14,8 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Date;
 
-@Entity
-@Table(name = "employees")
-public class Employee extends Auditable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Setter
-    @Getter
-    private Long id;
+@MappedSuperclass
+public abstract class Employee extends Auditable {
 
     @Setter
     @Getter
@@ -33,4 +27,14 @@ public class Employee extends Auditable {
     @NotBlank
     @Email
     private String email ;
+
+    @Setter
+    @Getter
+    @NotBlank
+    private String Address ;
+
+    @Setter
+    @Getter
+    @NotBlank
+    private String phoneNum ;
 }
