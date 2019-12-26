@@ -11,6 +11,7 @@ import java.util.Map;
 @Entity
 @Table(name = "games")
 public class Games extends Auditable {
+
     @Setter
     @Getter
     @NotNull
@@ -36,10 +37,13 @@ public class Games extends Auditable {
     @Getter
     private Game_Status game_status = Game_Status.JOINING;
 
-    @Setter @Getter @NotNull
+    @Setter
+    @Getter
+    @NotNull
     private Game_mode game_mode;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @ManyToMany
     private Map<Player, Stats> playerStats;
 

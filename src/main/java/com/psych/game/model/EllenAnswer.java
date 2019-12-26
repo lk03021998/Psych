@@ -1,8 +1,10 @@
 package com.psych.game.model;
 
+import com.psych.game.Constants;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -15,6 +17,7 @@ public class EllenAnswer extends Auditable{
     @Getter @Setter
     private Question question;
     @Getter @Setter @NotBlank
+    @Column(length = Constants.MAX_ANSWER_LENGTH)
     private String answer;
     @Getter @Setter
     private Long votes=0L;
